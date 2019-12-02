@@ -13,15 +13,15 @@
     <?php include 'header.php'; ?>
     
     <!-- ------------------ This Is Slider Section -------------- -->
-    <section id="slider">
+    <section class="slideshow-container">
 
     </section>
-
-     <!-- ------------------ This Is Popular Section -------------- -->
+    
+    <!-- ------------------ This Is Popular Section -------------- -->
     <section id="titrePopulaire">
-        <hr>
-        <p>Populaire</p>
-        <hr>
+        <hr id="ligne1">
+        <p id="popu">Populaire</p>
+        <hr id=ligne2>
     </section>
 
     <section id="populaire">
@@ -34,6 +34,7 @@
         </ul>
     </section>
 
-    <!-- ---------------------- This Is Footer Part -------------------- ->include
-    <?php include 'footer.php' ; ?>
+    <!-- ---------------------- This Is Footer Part -------------------- -->
+    <?php include 'footer.php'; ?>
+    <script scr="js.js"></script>
 </body>

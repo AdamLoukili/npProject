@@ -9,7 +9,7 @@ header{
     background-color: rgb(255, 255, 255);
     border: 3px solid #E00000;
     border-radius: 10px;
-    box-shadow: rgba(0, 0, 0, 0.500) 5px 5px 5px;
+    box-shadow: rgba(0, 0, 0, 0.500) 3px 5px 3px;
     padding: 7px;
     width: fit-content;
 }
@@ -45,7 +45,7 @@ header{
 #Connex{
     margin-top: 25px;
     margin-left: 20px;
-    margin-right: 20px;;
+    margin-right: 20px;
 }
 input#connexion{
     color: white;
@@ -55,7 +55,12 @@ input#connexion{
     padding: 7px;
     border: none;
     border-radius: 4px;
+    box-shadow: rgba(0, 0, 0, 0.350) 2px 2px;
 }
+input#connexion:active {
+    box-shadow: 0 0px rgba(0, 0, 0, 0.336);
+    transform: translateY(3px);
+  }
 #inscriptionButton{
     color: #E00000;
     font-family: KomikaDisplay;
@@ -64,4 +69,44 @@ input#connexion{
     border: none;
     background-color: white;
     margin-right: 10px;
+}
+/* ------------------------------ Footer CSS Begin HERE --------------------- */
+footer{
+    display: flex;
+    flex-direction: row;
+    color: white;
+    background-color: black;
+    width: fit-content;
+    padding: 5px 15px 5px 15px;
+}
+#footerConts ul li{
+    list-style: none;
+    display: inline;
+    margin-right: 10px;
+}
+/* ---------------------------------- CSS For The SLIDER -------------------------------- */
+
+/* Section Populaire*/
+#titrePopulaire{
+    display: flex;
+    flex-direction: row;
+}
+hr#ligne1{
+    height: 2px;
+    width: 150px;
+    border: none;
+    background-color: black;
+    margin: 20px;
+}
+hr#ligne2{
+    height: 2px;
+    width: 635px;
+    border: none;
+    background-color: black;
+    margin: 20px;
+}
+#popu{
+    margin-top: 11px;
+    font-family: KomikaDisplay;
+    font-weight: 800;
 }
