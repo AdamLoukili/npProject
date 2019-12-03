@@ -1,11 +1,11 @@
 <footer>
-  <p>Project Name = @npProject</p>
+  <p><strong>Project Name = @npProject</srong></p>
   <section id="footerConts">
     <ul>
-      <li><a href="#">Facebook</a></li>
-      <li><a href="#">Twitter</a></li>
-      <li><a href="#">Instagram</a></li>
-      <li><a href="#">Pinterest</a></li>
+      <li><a href="#"><i class="fab fa-facebook"></i></a></li>
+      <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+      <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+      <li><a href="#"><i class="fab fa-pinterest"></i></a></li>
     </ul>
   </section>
 </footer>
