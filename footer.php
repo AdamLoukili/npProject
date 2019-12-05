@@ -1,5 +1,5 @@
 <footer>
-  <p><strong>Project Name = @npProject  "MangActus</srong></p>
+  <p><strong>Project Name = @npProject  MangActus</srong></p>
   <section id="footerConts">
     <ul>
       <li><a href="#"><i class="fab fa-facebook"></i></a></li>
@@ -10,3 +10,4 @@
   </section>
 </footer>
 </body>
+</html>

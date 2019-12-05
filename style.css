@@ -216,6 +216,8 @@ hr.ligne2{
     color: white;
     padding: 13px 40px;
     margin-left: 40%;
+    font-family: KomikaDisplay;
+    font-weight: 700;
 }
 .rezoSocial{
     width: 20%;
