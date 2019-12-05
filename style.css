@@ -5,7 +5,7 @@
 body{
     width: 99%;
 }
-/* ------------------- CSS du Header ---------------------- */
+/* ---------------------------------------------------------- CSS du Header ------------------------------------------ */
 header{
     display: flex;
     flex-direction: row;
@@ -30,7 +30,7 @@ header{
     from{background-position-x: 0px;}
     to{background-position-x: -760px;}
 }
-/*--- Navigation ---*/
+/*------------- Navigation ------------*/
 #listHeader {
     margin-top: 7px;
 }
@@ -50,13 +50,14 @@ header{
     color: #E00000;
     text-decoration: underline #E00000;
 }
-/*----------------- Connexion / Inscription 's form ----------------------- */
+/*-------------- Connexion / Inscription 's form --------------- */
 #Connex{
     margin-top: 25px;
     margin-left: 50px;
     margin-right: 30px;
+    display: block;
 }
-input#connexion{
+input#connexion, input#deconnexion{
     color: white;
     background-color: #E00000;
     font-family: Arial, Helvetica, sans-serif;
@@ -66,7 +67,7 @@ input#connexion{
     border-radius: 4px;
     box-shadow: rgba(0, 0, 0, 0.350) 2px 2px;
 }
-input#connexion:active {
+input#connexion:active , input#deconnexion:active{
     box-shadow: 0 0px rgba(0, 0, 0, 0.336);
     transform: translateY(3px);
   }
@@ -79,7 +80,16 @@ input#connexion:active {
     background-color: white;
     margin-right: 10px;
 }
-/* ------------------------------ Footer CSS Begin HERE --------------------- */
+#inscriptionButton a{
+    color: #E00000;
+text-decoration: none;}
+#deco{
+    display: none;
+    margin-top: 25px;
+    margin-left: 50px;
+    margin-right: 30px;
+}
+/* -------------------------------------------------------- Debut CSS FOOTER --------------------------------------------- */
 footer{
     display: flex;
     flex-direction: row;
@@ -100,9 +110,9 @@ footer{
     color: white;
     font-size: 16pt;
 }
-/* ---------------------------------- CSS For The SLIDER -------------------------------- */
+/* ------------------------------------------------------------  CSS Page INDEX  --------------------------------------------------- */
 
-/* ----------------------------- Section Populaire ------------------------------------- */
+/* ----------- Section Populaire --------------- */
 .titrePopulaire{
     width: 80%;
     display: flex;
@@ -113,15 +123,13 @@ hr.ligne1{
     height: 2px;
     width: 10%;
     border: none;
-    background-color: black;
-    
+    background-color: black;  
 }
 hr.ligne2{
     height: 2px;
     width: 80%;
     border: none;
-    background-color: black;
-    
+    background-color: black;  
 }
 .popu{
     margin : 0px;
@@ -154,8 +162,7 @@ hr.ligne2{
     font-family: Arial, Helvetica, sans-serif;
     font-size: 11pt;
     font-weight: 700;
-    text-align: center;
-    
+    text-align: center;  
 }
 .populaire ul li{
     width: 120px;
@@ -165,4 +172,96 @@ hr.ligne2{
     border-radius: 7px;
     box-shadow: rgba(0, 0, 0, 0.35) 5px 3px;
     padding: 5px;
+}
+/* ------------------------------------------------------- Fin CSS Page INDEX ----- Debut CSS Page NEWS ---------------------------------------*/
+
+/* ------------------------------------------------------- Fin CSS Page NEWS ----- Debut CSS Page GALERIE -------------------------------------*/
+
+/* ------------------------------------------------------- Fin CSS Page GALERIE ----- Debut CSS Page CONTACT ---------------------------------------*/
+#lineCont{
+    font-family: KomikaDisplay;
+    font-size: 18pt;
+    margin: auto;
+    text-align: center;
+    margin-bottom: 50px;
+}
+.contactALl{
+    width: 80%;
+    height: 300px;
+    margin-bottom: 100px;
+}
+.formContact{
+    border: 3px solid #E00000;
+    border-radius: 10px;
+    padding: 5px 20px;
+    width: 35%;
+    float: left;
+    margin-left:20%;
+}
+.formContact p{
+    font-family: KomikaDisplay;
+    font-weight: 900;
+}
+#pseudoCont, #mailCont,#commCont{
+    border: black 1px solid;
+    border-radius: 5px;
+    line-height: 20px;
+    width: 50%;
+    margin-left: 20px;
+}
+#buttonCont{
+    border-radius: 5px;
+    background-color: black;
+    border: none;
+    color: white;
+    padding: 13px 40px;
+    margin-left: 40%;
+}
+.rezoSocial{
+    width: 20%;
+    background-color: black;
+    border-radius: 10px;
+    margin-left: 60%;
+    padding: 10px 3px;
+}
+.rezoSocial ul li{
+    list-style: none;
+    margin-bottom: 10px;
+    color: white;
+}
+.rezoSocial a{
+    color: white;
+    font-size: 15pt;
+    margin-right: 20px;
+}
+#partenaires{
+    width: 60%;
+    margin: auto;
+    margin-top:50px;
+    margin-bottom: 50px;
+    padding: 10px 0px;
+    display: flex;
+    flex-direction:row ;
+    border: black 2px solid;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.250) 5px 5px;
+}
+#partenaires ul{
+    margin: auto;
+    margin-bottom: 10px;
+}
+#partenaires ul li{
+    list-style: none;
+    margin-bottom: 7px;
+    color: black;
+    font-family: KomikaDisplay;
+}
+#partenaires a{
+    color: black;
+    font-family: KomikaDisplay;
+    text-decoration: none;
+}
+#partenaires a:hover{
+    text-decoration: underline;
+    color: rgb(29, 29, 29);
 }
