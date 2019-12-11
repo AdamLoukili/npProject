@@ -1,10 +1,8 @@
-<?php 
-
-include 'header.php';
+<?php
 session_start();
-require_once 'objectPHP/compte.php';
+require_once 'compte.php';
 
-$reg_user = new Compte();
+$reg_user = new Compte());
 
 if($reg_user->is_logged_in()!="")
 {
@@ -19,16 +17,18 @@ if(isset($_POST['buttonInscript']))
  $upass = trim($_POST['mdpInscript']);
  $code = md5(uniqid(rand()));
  
- $stmt = $reg_user->runQuery("SELECT * FROM inscription WHERE email=:mailInscript");
- $stmt->execute(array(":mailInscript"=>$email));
+ $stmt = $reg_user->runQuery("SELECT * FROM inscription WHERE email=:email_id");
+ $stmt->execute(array(":email_id"=>$email));
  $row = $stmt->fetch(PDO::FETCH_ASSOC);
  
  if($stmt->rowCount() > 0)
  {
   $msg = "
-        
+        <div class='alert alert-error'>
     <button class='close' data-dismiss='alert'>&times;</button>
-     <strong>Hey !</strong> cette adresse email est déjà utilisée. Essayez une autre.";
+     <strong>Hey !</strong> cette adresse email est déjà utilisée. Essayez une autre.
+     </div>
+     ";
  }
  else
  {
@@ -66,15 +66,29 @@ if(isset($_POST['buttonInscript']))
  }
 }
 ?>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Signup | Coding Cage</title>
+     <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body id="login">
+    <div class="container">
+    <?php if(isset($msg)) echo $msg;  ?>
+      <form class="form-signin" method="post">
+        <h2 class="form-signin-heading">Sign Up</h2><hr />
+        <input type="text" class="input-block-level" placeholder="Username" name="txtuname" required />
+        <input type="email" class="input-block-level" placeholder="Email address" name="txtemail" required />
+        <input type="password" class="input-block-level" placeholder="Password" name="txtpass" required />
+      <hr />
+        <button class="" type="submit" name="btn-signup">Sign Up</button>
+        <a href="index.php" style="float:right;" class="btn btn-large">Sign In</a>
+      </form>
 
-<section id="formInscription">
-    <form method="POST" id="formdInscript">
-        <p>Mail :</p> <input type="email" name="mailInscript" class="inputInscript" required>
-        <p>Pseudo :</p> <input type="text" name="pseudoInscript" class="inputInscript"required>
-        <p>Mot de passe :</p> <input type="text" name="mdpInscript"class="inputInscript" required>
-        <p>Confirmation Mot de passe :</p> <input type="text" name="cmdpInscript"class="inputInscript" required><br>
-        <input type="submit" name="buttonInscript" id="buttonInscript" value="Inscrivez-vous">
-    </form>
-</section>
-
-<?php include 'footer.php'; ?>
+    </div> <!-- /container -->
+    
+  </body>
+</html>

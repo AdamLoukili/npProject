@@ -4,10 +4,10 @@ require_once 'bdConfig.php';
 
 class Compte {
 
-    protected $id;
+    /*protected $id;
     protected $pseudo;
     protected $email;
-    protected $mdp;
+    protected $mdp;*/
     private $conn;
  
  public function __construct()
@@ -34,11 +34,11 @@ class Compte {
   try
   {       
    $password = md5($upass);
-   $stmt = $this->conn->prepare("INSERT INTO inscription(pseudo,email,password) 
-                                                VALUES(:pseudo, :mail, :mdp)");
-   $stmt->bindparam(":user_name",$uname);
-   $stmt->bindparam(":user_mail",$email);
-   $stmt->bindparam(":user_pass",$password);
+   $stmt = $this->conn->prepare("INSERT INTO inscription (pseudo,email,motdepasse, tokencode) 
+                                                VALUES(:pseudoInscript, :mail, :mdp, :active_code)");
+   $stmt->bindparam(":pseudoInscript",$uname);
+   $stmt->bindparam(":mailInscrit",$email);
+   $stmt->bindparam(":mdpInscrit",$password);
    $stmt->bindparam(":active_code",$code);
    $stmt->execute(); 
    return $stmt;
@@ -53,34 +53,34 @@ class Compte {
  {
   try
   {
-   $stmt = $this->conn->prepare("SELECT * FROM tbl_users WHERE userEmail=:email_id");
-   $stmt->execute(array(":email_id"=>$email));
+   $stmt = $this->conn->prepare("SELECT * FROM inscription WHERE email=:mailInscrit");
+   $stmt->execute(array(":mailInscrit"=>$email));
    $userRow=$stmt->fetch(PDO::FETCH_ASSOC);
    
    if($stmt->rowCount() == 1)
    {
     if($userRow['userStatus']=="Y")
     {
-     if($userRow['userPass']==md5($upass))
+     if($userRow['mdpInscript']==password_hash($upass))
      {
-      $_SESSION['userSession'] = $userRow['userID'];
+      $_SESSION['userSession'] = $userRow['pseudoInscrit'];
       return true;
      }
      else
      {
-      header("Location: index.php?error");
+      header("Location: ./index.php?error");
       exit;
      }
     }
     else
     {
-     header("Location: index.php?inactive");
+     header("Location: ./index.php?inactive");
      exit;
     } 
    }
    else
    {
-    header("Location: index.php?error");
+    header("Location: ./index.php?error");
     exit;
    }  
   }
@@ -112,7 +112,7 @@ class Compte {
  
  function send_mail($email,$message,$subject)
  {      
-  require_once('mailer/class.phpmailer.php');
+  require_once('objectPHP/phpmailer.php');
   $mail = new PHPMailer();
   $mail->IsSMTP(); 
   $mail->SMTPDebug  = 0;                     

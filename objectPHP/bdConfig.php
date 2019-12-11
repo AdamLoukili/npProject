@@ -9,7 +9,7 @@ class BasedeDonnees
     private $password = "";
     public $conn;
      
-    public function bdConnection()
+    public function dbConnection()
  {
      
      $this->conn = null;    
