@@ -8,7 +8,7 @@ $reg_user = new Compte();
 
 if($reg_user->is_logged_in()!="")
 {
- $reg_user->redirect('./index.php');
+ $reg_user->redirect('index.php');
 }
 
 
@@ -16,11 +16,10 @@ if(isset($_POST['buttonInscript']))
 {
  $uname = trim($_POST['pseudoInscript']);
  $email = trim($_POST['mailInscript']);
- $upass = trim($_POST['mdpInscript']);
- $code = md5(uniqid(rand()));
- 
- $stmt = $reg_user->runQuery("SELECT * FROM inscription WHERE email=:mailInscript");
- $stmt->execute(array(":mailInscript"=>$email));
+ $password = trim($_POST['mdpInscript']);
+ $code = bin2hex(crypt(16));
+ $stmt = $reg_user->runQuery("SELECT * FROM inscription WHERE email=:m");
+ $stmt->execute(array(":m"=>$email));
  $row = $stmt->fetch(PDO::FETCH_ASSOC);
  
  if($stmt->rowCount() > 0)
@@ -32,12 +31,12 @@ if(isset($_POST['buttonInscript']))
  }
  else
  {
-  if($reg_user->register($uname,$email,$upass,$code))
+  if($reg_user->register($uname,$email,$password,$code))
   {   
    $id = $reg_user->lasdID();  
    $key = base64_encode($id);
    $id = $key;
-   
+
    $message = "     
       Hello $uname,
       <br /><br />
@@ -68,11 +67,12 @@ if(isset($_POST['buttonInscript']))
 ?>
 
 <section id="formInscription">
+<?php if(isset($msg)) echo $msg;  ?>
     <form method="POST" id="formdInscript">
         <p>Mail :</p> <input type="email" name="mailInscript" class="inputInscript" required>
         <p>Pseudo :</p> <input type="text" name="pseudoInscript" class="inputInscript"required>
-        <p>Mot de passe :</p> <input type="text" name="mdpInscript"class="inputInscript" required>
-        <p>Confirmation Mot de passe :</p> <input type="text" name="cmdpInscript"class="inputInscript" required><br>
+        <p>Mot de passe :</p> <input type="password" name="mdpInscript"class="inputInscript" required>
+        <p>Confirmation Mot de passe :</p> <input type="password" name="mdpInscript"class="inputInscript" required><br>
         <input type="submit" name="buttonInscript" id="buttonInscript" value="Inscrivez-vous">
     </form>
 </section>

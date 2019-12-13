@@ -1,5 +1,5 @@
 <?php
-
+use PHPMailer\PHPMailer\PHPMailer;
 require_once 'bdConfig.php';
 
 class Compte {
@@ -29,16 +29,16 @@ class Compte {
   return $stmt;
  }
  
- public function register($uname,$email,$upass,$code)
+ public function register($uname,$email,$password,$code)
  {
   try
   {       
-   $password = md5($upass);
-   $stmt = $this->conn->prepare("INSERT INTO inscription (pseudo,email,motdepasse, tokencode) 
-                                                VALUES(:pseudoInscript, :mail, :mdp, :active_code)");
+   $password = md5($password);
+   $stmt = $this->conn->prepare("INSERT INTO inscription (pseudo, email, motdepasse, tokencode) 
+                                                VALUES(:pseudoInscript, :mailInscript, :mdpInscript, :active_code)");
    $stmt->bindparam(":pseudoInscript",$uname);
-   $stmt->bindparam(":mailInscrit",$email);
-   $stmt->bindparam(":mdpInscrit",$password);
+   $stmt->bindparam(":mailInscript",$email);
+   $stmt->bindparam(":mdpInscript",$password);
    $stmt->bindparam(":active_code",$code);
    $stmt->execute(); 
    return $stmt;
@@ -49,7 +49,7 @@ class Compte {
   }
  }
  
- public function login($email,$upass)
+ public function login($email,$password)
  {
   try
   {
@@ -61,26 +61,26 @@ class Compte {
    {
     if($userRow['userStatus']=="Y")
     {
-     if($userRow['mdpInscript']==password_hash($upass))
+     if($userRow['mdpInscript']==password_verify($password))
      {
       $_SESSION['userSession'] = $userRow['pseudoInscrit'];
       return true;
      }
      else
      {
-      header("Location: ./index.php?error");
+      header("Location: login.php?error");
       exit;
      }
     }
     else
     {
-     header("Location: ./index.php?inactive");
+     header("Location: login.php?inactive");
      exit;
     } 
    }
    else
    {
-    header("Location: ./index.php?error");
+    header("Location: login.php?error");
     exit;
    }  
   }
@@ -112,7 +112,7 @@ class Compte {
  
  function send_mail($email,$message,$subject)
  {      
-  require_once('objectPHP/phpmailer.php');
+  require_once('PHPMailer/PHPMailer.php');
   $mail = new PHPMailer();
   $mail->IsSMTP(); 
   $mail->SMTPDebug  = 0;                     
@@ -121,10 +121,11 @@ class Compte {
   $mail->Host       = "smtp.gmail.com";      
   $mail->Port       = 465;             
   $mail->AddAddress($email);
-  $mail->Username="yourgmailid@gmail.com";  
-  $mail->Password="yourgmailpassword";            
-  $mail->SetFrom('you@yourdomain.com','Coding Cage');
-  $mail->AddReplyTo("you@yourdomain.com","Coding Cage");
+  $mail->Username   = "mangactus@outlook.com";  
+  $mail->Password   ="NPproject123.";            
+  $mail->From       ='mangactus@outlook.com';
+  $mail->FromName   ='MangActus.be';
+  $mail->AddReplyTo("mangactus@outlook.com","MangActus.be");
   $mail->Subject    = $subject;
   $mail->MsgHTML($message);
   $mail->Send();

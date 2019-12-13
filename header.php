@@ -27,7 +27,7 @@
   </section>
 
   <section id="Connex">
-      <form method="POST">
+      <form action="objectPHP/login.php" method="POST">
         <input type="submit" id="connexion" name="connexion" value="Connexion">
       </form>
   </section>
