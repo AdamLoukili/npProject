@@ -86,8 +86,8 @@ if(isset($_POST['btn-login']))
     <input type="email" class="emailLog" placeholder="Adresse mail" name="txtemail" required />
     <input type="password" class="passwordLog" placeholder="Mot de passe" name="txtupass" required />
     <button class="buttonLog" type="submit" name="btn-login">Sign in</button>
-    <p><a href="../inscription.php" class="">S'inscrire</a>
-    <a href="forgetpassword.php" class="">Mot de passe perdu ? </a></p>
+    <p><a href="../inscription.php" class="lienLog">S'inscrire</a>
+    <a href="forgetpassword.php" class="lienLog">Mot de passe perdu ? </a></p>
   </form>
 
 </section>

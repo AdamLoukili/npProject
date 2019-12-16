@@ -1,5 +1,17 @@
-    <?php include 'header.php'; ?>
+    <?php 
+    session_start();
+    require_once 'objectPHP/bdConfig.php';
+    include 'header.php';
 
+    if(isset($_POST['buttonCont'])){
+      $bd = new BasedeDonnees;
+      if(isset($_POST['pseudoCont']) && isset($_POST['mailCont'])){
+        execute("INSERT INTO contact (pseudo, email, contactcomm) VALUES (:pseudoCont, :mailCont, :commCont )");
+      }else{
+        echo "Le formulaire n'est pas complété";
+      }
+    }
+    ?>
     <p id="lineCont"><strong>Besoin de nous contacter ? Un avis à nous soumettre ? </br> N'hésitez pas !</strong></p>
 
     <section class="contactAll">
@@ -8,7 +20,7 @@
         <form method="POST">
           <p>Votre Pseudo : <input type="text" id="pseudoCont" name="pseudoCont" ></p>
           <p>Votre Mail   : <input type="email" id="mailCont" name="mailCont" ></p>
-          <p>Commentaires : <textarea id="commCont" placeholder="Votre commentaire ici..."></textarea></p>
+          <p>Commentaires : <textarea id="commCont" name="commCont" placeholder="Votre commentaire ici..."></textarea></p>
           <input type="submit" name="buttonCont" id="buttonCont" value="Envoyer">
         </form>
       </section>
