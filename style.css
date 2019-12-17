@@ -349,25 +349,28 @@ hr.ligne2{
 }
 .mySlides {
     display: none;
-    width: 100%;
-    border: #E00000 1px solid;}
+    width: 100%;}
 
 /* Caption text */
 .text {
-    color: #f2f2f2;
-    font-size: 15px;
-    padding: 0px 12px;
+    color: black;
+    background-color: rgba(255, 255, 255, 0.55);
+    font-size: 13pt;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: justify;
+    padding: 25px 50px;
     position: absolute;
     bottom: 8px;
-    width: 50%;
+    width: 30%;
+    height: 60%;
 }
 /* The dots/bullets/indicators */
 .dot {
-    height: 15px;
-    width: 15px;
+    height: 7px;
+    width: 28px;
     margin: 0 2px;
     background-color: #bbb;
-    border-radius: 50%;
+    border-radius: 30%;
     display: inline-block;
     transition: background-color 0.6s ease;
 }
@@ -379,7 +382,7 @@ hr.ligne2{
     -webkit-animation-name: fade;
     -webkit-animation-duration: 5.5s;
     animation-name: fade;
-    animation-duration: 5.5s;
+    animation-duration: 1.5s;
 } 
 @-webkit-keyframes fade {
     from {opacity: .4} 

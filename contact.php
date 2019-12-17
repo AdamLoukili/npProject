@@ -1,12 +1,13 @@
     <?php 
     session_start();
-    require_once 'objectPHP/bdConfig.php';
+    require_once 'objectPHP/compte.php';
     include 'header.php';
 
     if(isset($_POST['buttonCont'])){
-      $bd = new BasedeDonnees;
+      $user = new Compte;
       if(isset($_POST['pseudoCont']) && isset($_POST['mailCont'])){
-        execute("INSERT INTO contact (pseudo, email, contactcomm) VALUES (:pseudoCont, :mailCont, :commCont )");
+        $stmt= $user->runQuery("INSERT INTO contact (pseudo, email, contactcomm) VALUES (:pseudoCont, :mailCont, :commCont)");
+        $stmt ->execute(array(':pseudoCont' => $_POST['pseudoCont'], ':mailCont'=> $_POST['mailCont'], ':commCont'=> $_POST['commCont']));
       }else{
         echo "Le formulaire n'est pas complété";
       }

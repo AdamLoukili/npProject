@@ -1,5 +1,7 @@
 
-    <?php include 'header.php'; ?>
+    <?php
+    session_start();
+    include 'header.php'; ?>
     
     <!-- ------------------ This Is Slider Section -------------- -->
     <section class="slideshow-container">
@@ -32,7 +34,7 @@
       <section class="mySlides fade">
         <img src="imgs/accueil/3.png" style = "width : 100%">
         <section class="text">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer gravida aliquet commodo. 
+            <p>Titre : <br>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer gravida aliquet commodo. 
             Nulla eget ipsum tempus, rhoncus sapien nec, sollicitudin est. Sed dictum vel libero a porta. 
             Quisque maximus consequat ligula ac aliquet. Aenean blandit elit nibh, in blandit sem aliquet eget. 
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam aliquet lobortis finibus. Nunc et rutrum metus. 
