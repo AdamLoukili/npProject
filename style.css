@@ -253,6 +253,85 @@ hr.ligne2{
     margin: auto;
 }
 /* ------------------------------------------------------- Debut CSS Page GALERIE -------------------------------------*/
+.titreGalerie{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    margin-top: 10%;
+}
+.lignegal1{
+    width: 15%;
+    height: 3px;
+    border: none;
+    background-color: black;
+}
+.lignegal2{
+    width: 65%;
+    height: 3px;
+    border: none;
+    background-color: black; 
+}
+.gal{
+    font-family: KomikaDisplay;
+    font-weight: 800;
+    font-size: 16pt;
+    margin: -5px;
+}
+.gallerieAll{
+    width: 80%;
+    margin: auto;
+}
+.gallerieRecent{
+    width: 100%;
+    margin: auto;
+    overflow-x: scroll;
+    margin-bottom: 3%;
+    margin-top: 3%;
+}
+.gallerieRecent::-webkit-scrollbar {
+    height: 5px;
+    width: 100%;
+  }
+.gallerieRecent::-webkit-scrollbar-track {
+    background-color: rgba(255, 136, 180, 0.75);
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.3); 
+    border-radius: 5px;
+}
+.gallerieRecent::-webkit-scrollbar-thumb {
+	background:rgb(138, 13, 13); 
+    border-radius: 5px;
+}
+.gallerieRecent ul{
+    display: flex;
+    flex-direction: row;
+}
+.gallerieRecent ul li{
+    display: inline;
+    list-style: none;
+    margin-right: 50px;
+}
+.imgGalrecent{
+    width: 350px;
+}
+.gallerieTout{
+    width: 100%;
+    margin: auto;
+    margin-top: 3%;
+    margin-bottom: 3%;
+}
+.gallerieTout ul li{
+    display: inline;
+    list-style: none;
+    margin-left: 25px;
+}
+.gallerieTout ul li img{
+    border: 2px black solid;
+    border-radius: 2px;
+    padding: 5px;
+}
+.imgGal{
+    width: 45%;
+}
 
 /* ------------------------------------------------------- Debut CSS Page CONTACT ---------------------------------------*/
 #lineCont{
