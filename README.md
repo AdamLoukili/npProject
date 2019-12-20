@@ -1,10 +1,7 @@
 # npProject
 
-Projet de site web porté sur le thème de l'évènementiel. Pour plus de précision, ce sera sur l'évènementiel au Japon.
+Projet de site web porté sur le thème de l'actualité. Pour plus de précision, ce sera sur l'actualité manga en général.
 
-Voici a quoi ressemblera le header : 
-
-<img src="imgs/header.PNG" style="width:33%;">
 
 ------
 Les principales couleurs utilisées sont celles ci :
