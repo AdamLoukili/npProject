@@ -1,15 +1,17 @@
 # npProject
 
-Projet de site web porté sur le thème de l'évènementiel. Pour plus de précision, ce sera sur l'évènementiel au Japon.
+Projet de site web portÃ© sur le thÃ¨me de l'Ã©vÃ¨nementiel. Pour plus de prÃ©cision, ce sera sur l'Ã©vÃ¨nementiel au Japon.
 
 Voici a quoi ressemblera le header : 
 
-<img src="imgs/header.png" style="width:33%;">
+<img src="imgs/header.PNG" style="width:33%;">
 
 ------
-Les principales couleurs utilisées sont celles ci :
+Les principales couleurs utilisÃ©es sont celles ci :
 
-<img src="imgs/couleurs.png" style="width:33%;">
+<img src="imgs/couleurs.PNG" style="width:33%;">
 
 Voici la page index : 
-<img src="imgs/pageindex.png" style="width:33%;"> 
+<img src="imgs/pageindex.PNG" style="width:33%;"> 
+Et le logo qui est un sprite :
+<img src="imgs/LogoSprite-190px.png" style="width:40%;">
