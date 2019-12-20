@@ -4,9 +4,12 @@ Projet de site web porté sur le thème de l'évènementiel. Pour plus de précision,
 
 Voici a quoi ressemblera le header : 
 
-![header](imgs/header.png)
+<img src="imgs/header.png" style="width:33%;">
 
 ------
 Les principales couleurs utilisées sont celles ci :
 
-![couleurs](imgs/couleurs.png) 
+<img src="imgs/couleurs.png" style="width:33%;">
+
+Voici la page index : 
+<img src="imgs/pageindex.png" style="width:33%;"> 
